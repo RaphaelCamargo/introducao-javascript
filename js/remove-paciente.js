@@ -1,7 +1,11 @@
-var tabela = document.querySelector('tabela');
+var tabela = document.querySelector("#tabela-pacientes");
 
-tabela.addEventListener('dbclick', function(event){
+tabela.addEventListener("dblclick", function(event) {
+    event.target.parentNode.classList.add("fadeOut");
+    
     if(event.target.tagName == 'TD'){// Somente executará nosso código caso o elemento em que clicamos seja um <td>
-        event.target.parentNode.remove();
+        setTimeout(function() {
+            event.target.parentNode.remove();
+        }, 500);
     }
 });
